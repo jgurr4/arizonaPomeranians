@@ -11,12 +11,11 @@
   nav, aside {
 	display: none;
   }
-  main, h1 {
+  main {
 	width: 525px;
   }
   body {
     width: 525px;
-	overflow: scroll;
   }
 }
 
@@ -24,12 +23,11 @@
   nav {
 	width: 135px;
   }
-  main, h1 {
+  main {
 	width: 400px;
   }
   body {
     width: 670px;
-    overflow: scroll;
   }
 }
 
@@ -37,12 +35,11 @@
   nav {
     width: 125px;
   }
-  main, h1 {
+  main {
     width: 550px;
   }
   body {
     width: 800px;
-    overflow: scroll;
   }
 }
 
@@ -53,9 +50,8 @@
   }
   body{
     width: 1035px;
-    overflow: scroll;
   }
-  main, h1{
+  main{
 	width: 750px;
   }
 }
@@ -69,9 +65,8 @@
   body{
     font-size: 1.2rem;
     width: 1320px;
-    overflow: scroll;
   }
-  main, h1{
+  main{
 	width: 800px;
   }
 }
@@ -85,22 +80,20 @@
   body{
     font-size: 1.5rem;
     width: 1500px;
-    overflow: scroll;
   }
-  main, h1{
+  main{
 	width: 900px;
   }
 }
 
 /*large screens*/
 @media screen and (min-width: 1500px){
-  main, h1{
+  main{
 	width: 1250px;
   }
   body{
     font-size: 1.5rem;
     width: 1900px;
-    overflow: scroll;
   }
   nav{
     font-size: 30px;
@@ -109,6 +102,7 @@
 }
 
 main{
+  border-top:3px solid black;
   border-left: 3px solid black;
   border-right: 3px solid black;
   height: 100%;
@@ -141,10 +135,10 @@ nav{
   height: 100rem;
   float: left;
   padding-bottom: 10px;
-  position: fixed;
+  position: sticky;
 }
 
-#nav{
+.nav{
   list-style-type: none;
   padding: 5px;
   margin: 5px;
@@ -155,7 +149,7 @@ nav{
   text-align: center;
 }
 
-#nav:hover{
+.nav:hover{
   background-color: #cccccc;
 }
 
@@ -165,7 +159,7 @@ a{
   word-wrap: break-word;
 }
 
-#nav.active{
+#active{
   border:2px solid black;
 }
 
@@ -202,10 +196,12 @@ h1{
   font-size: 3vw;
   margin-left: auto;
   margin-right: auto;
-  border-bottom: 3px solid black;
-  border-left: 3px solid black;
-  border-right: 3px solid black;
 }
+
+#guarantee{
+  text-decoration: underline;
+}
+
 
 p, pre{
   padding-bottom: 10px;
@@ -232,7 +228,7 @@ mark{
   font-weight: normal;
 }
 
-#points{
+.points{
   margin-left: 1em;
   font-family: cursive;
   padding: .5em;
