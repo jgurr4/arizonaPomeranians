@@ -1,0 +1,2 @@
+#!/bin/bash
+docker run -it --rm --name pom-wiki -p 8080:80 -d mediawiki
