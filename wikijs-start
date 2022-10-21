@@ -1,6 +1,0 @@
-#!/bin/bash
-# wiki.js is superior to mediawiki, because it uses more modern ui and it is made completely in javascript not stupid php.
-# Wiki.js uses the mariadb instance on our server for storage. It will use the docker network bridge that is made from the docker-compose command to connect to mariadb container host ip. In order for this to work, you have to add password to the server .bashrc file or .profile
-# --net=portfolio-apps 
-# --restart unless-stopped 
-docker run -d --name wiki -p 8080:3000 --rm -e DB_TYPE=mariadb -e DB_HOST=mariadb -e DB_PORT=3306 -e DB_USER=azpom -e DB_PASS=$pompass -e DB_NAME=pomwiki requarks/wiki:2.5

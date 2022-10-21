@@ -1,0 +1,29 @@
+# This file could use external secrets. But only on a swarm manager node. They must be created on the server or machine directly using `docker secret create` command. See: https://stackoverflow.com/questions/42139605/how-do-you-manage-secret-values-with-docker-compose-v3-1
+version: '3'
+services:
+
+  mariadb:
+    image: mariadb:10.9.3
+    command: '--default-authentication-plugin=mysql_native_password'
+    restart: always
+    volumes:
+      - ${HOME}/azpom-extra/mysqldata:/var/lib/mysql
+    environment:
+      MARIADB_ROOT_PASSWORD: ${pass}
+      MARIADB_DATABASE: azpom
+    container_name: mariadb
+
+  wiki:
+    image: requarks/wiki:2.5
+    ports: 
+      - 8080:3000
+    depends_on: 
+      - mariadb
+    environment:
+      DB_HOST: mariadb
+      DB_TYPE: mariadb
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASS: ${pass}
+      DB_NAME: azpom
+    container_name: wiki

@@ -1,2 +1,2 @@
 #!/bin/bash
-docker run -d -p 3306:3306 --rm -v ~/azpom-extra/mysqldata:/var/lib/mysql --name mariadb -e MARIADB_USER=azpom -e MARIADB_PASSWORD=$pompass -e MARIADB_ROOT_PASSWORD=$pass mariadb:10.9.3
+docker run -d --rm -v ~/azpom-extra/mysqldata:/var/lib/mysql --name mariadb -e MARIADB_ROOT_PASSWORD=$pass mariadb:10.9.3
