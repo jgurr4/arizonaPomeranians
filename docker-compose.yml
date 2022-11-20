@@ -17,6 +17,7 @@ services:
     image: requarks/wiki:2.5
     ports: 
       - 8080:3000
+      - 443:3443
     depends_on: 
       - mariadb
     environment:
@@ -26,4 +27,4 @@ services:
       DB_USER: root
       DB_PASS: ${pass}
       DB_NAME: azpom
-    container_name: wiki
+    container_name: wikijs

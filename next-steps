@@ -1,0 +1,10 @@
+#1: Make a minimum font size for phones
+#2: Make a maximum font size for displays
+#3: Make zoomable pictures possible
+#4: Make backup of database or webpage and write instructions for importing again.
+
+Deploying to Server:
+ - Figure out how to make backup.sql file from existing azpom database.
+ - Fix the bug with mariadb/wikijs, and portfolio/med_dissector (read the logs I captured in a file on the server)
+ - Use rsync to copy the backup.sql file into ~/sql-scripts/ on the server
+ - go inside the mariadb container and import the backup.sql as well as the server.sql files.
