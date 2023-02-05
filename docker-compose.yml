@@ -8,6 +8,7 @@ services:
     restart: always
     volumes:
       - ${HOME}/azpom-extra/mysqldata:/var/lib/mysql
+      - ${HOME}/azpom-extra/sql-scripts:/sql-scripts
     environment:
       MARIADB_ROOT_PASSWORD: ${pass}
       MARIADB_DATABASE: azpom
@@ -28,3 +29,5 @@ services:
       DB_PASS: ${pass}
       DB_NAME: azpom
     container_name: wikijs
+    volumes:
+      - /${HOME}/wikijs-bkup:/wikijs-bkup
